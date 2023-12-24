@@ -14,3 +14,10 @@ def usuarios(request):
     novos_usuarios.idade = request.POST.get('idadeform')
     #Salvando os dados
     novos_usuarios.save()
+    # exibor os usuarios já cadastrados na tela
+    usuarios = {
+        #aqui ele espera que seja um dicionario
+        'usuarios': Usuario.objects.all()
+    }
+    #retornar os dados para a tela
+    return render(request, 'usuarios/usuarios.html', usuarios)

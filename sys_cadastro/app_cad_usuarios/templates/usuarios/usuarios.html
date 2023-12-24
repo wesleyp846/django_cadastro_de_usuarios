@@ -1,0 +1,26 @@
+<!--Para incluir no bloco de conteudo do template base-->
+{% extends 'usuarios/base.html' %}
+
+<!--onde vai ser renderizado dentro do base.html-->
+{% block conteudo %}
+
+<div class="container">
+    <h1>Lista de Usuários</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>idade</th>
+        </tr>
+        <!-- como fazer o for em html do Django-->
+        {% for usuario in usuarios %}
+        <tr>
+            <!-- usuario é uma informação de vem de views (o dicionário) -->
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

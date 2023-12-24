@@ -34,3 +34,16 @@ python manage.py migrate
 agora vamos criar a view que recebe os dados do formulario
 ![Alt text](vvvvvv.png)
 
+criando o template usuarios.html
+![Alt text](vvvvvvv.png)
+
+antes, passar {% csrf_token %} dentro do form no home.html
+python manage.py makemigrations
+python manage.py migrate 
+
+teste web
+python manage.py runserver
+
+fizemos a estilização da pagina de usuarios
+
+e faremos um template base pra não precisar reescrever todas as informaçoes e componetes do bootstrap ./tmplates/usuarios/base.html
