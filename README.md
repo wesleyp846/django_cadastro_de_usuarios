@@ -1,49 +1,153 @@
-# django_cadastro_de_usuarios
-Sistema web de cadastro de usuários, com Framework Django e integração com Banco de dados
+# Cadastro web
+Sistema ``web`` de cadastro de usuários, com Framework [Django](https://docs.djangoproject.com/en/5.0/) e integração com Banco de dados.
 
-inspirado em https://www.youtube.com/watch?v=-m5ywU8SW9E&list=WL&index=4
+---
 
-1 criar a rota, `O link` (urls.py)
-2 criar o mque fazer quando chegar naquele link (views.py)
-3 criar o exibir quando chegar no link (html e css)
+## Versão v1.0
 
-1 no arquivo urls.py  em sys_cadastro vamos criar a rota para a pagina inicaal
+&nbsp;
+
+> ### Pré-requisitos
+
+Python 3.9+
+ 
+&nbsp;
+  
+> ### Bibliotecas
+ 
+[Django](https://docs.djangoproject.com/en/5.0/)
+[Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+[SQLite](https://www.sqlite.org/docs.html)
+
+&nbsp;
+
+> ### Funcionalidades:
+
+* Cadastrar novos usuários com nome, idade.
+* Listar todos os usuários cadastrados em uma tabela
+* Salvar os dados em um banco [SQLite](https://www.sqlite.org/docs.html)
+&nbsp; 
+
+> ### Pré-code
+> > virtual environment
+#### Feito via terminal, instalação de um ambiente virtual
+    python -m venv env
+    .\env\Scripts\activate
+
+> > #### Instalando as bibliotécas
+
+    python -m pip install --upgrade pip
+    pip install django 
+
+&nbsp;
+> ### Code
+> > #### Criação do projeto
+ 
+    django-admin startproject sys_cadastro
+Nessa etapa foi criada a pasta do projeto e o arquivo que gerencia todo o porjeto `manege.py`, atravéz desse arquivo que o projeto ira rodar pela primeira vez para fins de teste.
+
+>> #### Entra na pasta do projeto.
+
+    cd /sys_cadastro
+&nbsp;
+>> #### Criação dos App's
+
+    python manage.py startapp app_cad_usuarios
+* obs>> navege até ``./app_cad_usuarios/settings.py``
+em `INSTALLED_APPS` e adicione o `app_cad_usuarios`
+
+>> #### Entra na pasta do app.
+
+    cd /sys_cadastro/app_cad_usuarios
+&nbsp;
+
+>>> ##### Sequencia de criação
+
+1. criar a rota, `O link` (urls.py)
+2. criar o que fazer quando chegar naquele link (views.py)
+3. criar o exibir quando chegar no link (html e css)
+
+&nbsp;
+
+   1. Em ``./sys_cadastro/sys_cadastro/urls.py`` vamos criar a rota para a pagina inicial
 ![Alt text](v.png)
-
-obs cadastrar o app_cad_usuarios no arquivo settings.py
-
-2 no arquivo views.py  em app_cad_usuarios vamos criar a função home
+&nbsp;
+    
+   2. Em ``./sys_cadastro/app_cad_usuarios/views.py``  vamos criar a função ``home``
 ![Alt text](vv.png)
+&nbsp;
 
-3 criando os templates html e a pasta dos templates
+   3. Em ``./sys_cadastro/app_cad_usuarios/templates/usuarios`` vamos criar o arquivo ``home.html``
 ![Alt text](vvv.png)
+&nbsp;
 
-visulizar projeto
-python manage.py runserver
+>> #### Visulizar projeto e estilização
+    python manage.py runserver
 
-nas páginas do bootstrap vamos buscar uma navbar para compor nossa home buscar um formulario de imput etc
+Nas documentações do [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) vamos buscar uma [Navbar](https://getbootstrap.com/docs/5.0/components/navbar/) para compor nossa ``home`` e buscar um formulário de imput, etc...
+* Dentro do ``form`` em ``./sys_cadastro/app_cad_usuarios/templates/usuarios/home.html`` passar o ``csrf_token``
+&nbsp;
+    {% csrf_token %}
+&nbsp;
 
-agora a etapade criação da views de cadastro ligando o banco de dados com as informações do formulario
+Agora começa a etapa de criação das views de cadastro ligando o banco de dados com as informações do formulario
 ![Alt text](vvvv.png)
+&nbsp;
 ![Alt text](vvvvv.png)
+&nbsp;
 
-agora vamos fazer o migrations e o migrate
-python manage.py makemigrations
-python manage.py migrate
+Fazendo o migrations e o migrate, são **obrigatórios** ao se trabalhar com o ``banco de dados``
 
-agora vamos criar a view que recebe os dados do formulario
+    python manage.py makemigrations
+    python manage.py migrate
+
+Criando a view que recebe os dados do formulário
 ![Alt text](vvvvvv.png)
 
-criando o template usuarios.html
+Construção da página ``usuarios.html``
 ![Alt text](vvvvvvv.png)
 
-antes, passar {% csrf_token %} dentro do form no home.html
-python manage.py makemigrations
-python manage.py migrate 
+>>> ######No terminal
+    python manage.py makemigrations
+    python manage.py migrate 
 
-teste web
-python manage.py runserver
+>>>######teste web
+    python manage.py runserver
 
-fizemos a estilização da pagina de usuarios
+E faremos um template base pra não precisar reescrever todas as informaçoes e componetes do bootstrap em ``./sys_cadastro/app_cad_usuarios/templates/usuarios/base.html``
+&nbsp;
 
-e faremos um template base pra não precisar reescrever todas as informaçoes e componetes do bootstrap ./tmplates/usuarios/base.html
+**Fizemos a estilização da página de usuarios**
+
+&nbsp;
+
+> ### Uso
+* Em terminal
+  
+        python manage.py runserver
+
+* Depois em navegador
+  
+        http://127.0.0.1:8000
+
+&nbsp;
+
+> ### Implementação
+
+ [Django](https://docs.djangoproject.com/en/5.0/) em uso para codificação.
+&nbsp;
+
+> Créditos
+
+Código inicial baseado no canal [Dev Aprender](https://www.youtube.com/watch?v=-m5ywU8SW9E&list=WL&index=4).
+
+
+Documentação e melhorias adicionadas por [Wesley Pereira](https://github.com/wesleyp846)
+
+&nbsp;
+> Licença
+MIT
+
+
+Espero que a documentação os ajude a entender a aplicação! 
+Por favor, sinta-se a vontade para melhorá-la.
