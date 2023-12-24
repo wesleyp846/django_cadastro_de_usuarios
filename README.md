@@ -13,7 +13,7 @@ Python 3.9+
  
 &nbsp;
   
-> ### Bibliotecas
+> ### Bibliotécas
  
 [Django](https://docs.djangoproject.com/en/5.0/)
 
@@ -28,6 +28,7 @@ Python 3.9+
 * Cadastrar novos usuários com nome e idade.
 * Listar todos os usuários cadastrados em uma tabela
 * Salvar os dados em um banco [SQLite](https://www.sqlite.org/docs.html)
+
 &nbsp; 
 
 > ### Pré-code
@@ -92,13 +93,11 @@ em `INSTALLED_APPS` e adicione o `app_cad_usuarios`
 
 Nas documentações do [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) vamos buscar uma [Navbar](https://getbootstrap.com/docs/5.0/components/navbar/) para compor nossa ``home`` e buscar um formulário de imput e etc...
 * Dentro do ``form`` em ``./sys_cadastro/app_cad_usuarios/templates/usuarios/home.html`` passar o ``csrf_token`` como
-  
 &nbsp;
 
         {% csrf_token %}
 
 &nbsp;
-
 
 * Agora começa a etapa de criação das views de cadastro ligando o banco de dados com as informações do formulario
   
@@ -122,12 +121,12 @@ Construção da página ``usuarios.html``
 
 ![Alt text](vvvvvvv.png)
 
->>> ######No terminal
+>>> ###### No terminal
 
     python manage.py makemigrations
     python manage.py migrate 
 
->>>######teste web
+>>>###### teste web
 
     python manage.py runserver
 
