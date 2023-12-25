@@ -46,7 +46,7 @@ Python 3.9+
 > ### Code
 > > #### Criação do projeto
  
-    django-admin startproject sys_cadastro
+    django-admin startproject sys_cadastro .
 Nessa etapa foi criada a pasta do projeto e o arquivo que gerencia todo o porjeto `manege.py`, atravéz desse arquivo que o projeto ira rodar pela primeira vez para fins de teste.
 
 >> #### Entra na pasta do projeto.
