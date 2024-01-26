@@ -1,3 +1,5 @@
+# Projeto em pausa
+
 # Cadastro web
 Sistema ``web`` para cadastro de usuários, com Framework [Django](https://docs.djangoproject.com/en/5.0/) e integração com Banco de dados.
 
